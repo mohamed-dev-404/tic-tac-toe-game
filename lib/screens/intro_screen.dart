@@ -11,7 +11,7 @@ class IntroScreen extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(
             'assets/images/bg.png',
@@ -28,10 +28,10 @@ class IntroScreen extends StatelessWidget {
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
-              Spacer(
+              const Spacer(
                 flex: 2,
               ),
-              Text(
+              const Text(
                 'Pick who goes first?',
                 style: TextStyle(
                     color: Colors.white,
@@ -54,7 +54,7 @@ class IntroScreen extends StatelessWidget {
                           );
                         },
                         child: Container(
-                          padding: EdgeInsets.all(30),
+                          padding: const EdgeInsets.all(30),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(32),
@@ -72,7 +72,7 @@ class IntroScreen extends StatelessWidget {
                           );
                         },
                         child: Container(
-                          padding: EdgeInsets.all(30),
+                          padding: const EdgeInsets.all(30),
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(32),
@@ -84,7 +84,7 @@ class IntroScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Spacer(
+              const Spacer(
                 flex: 1,
               ),
             ],

@@ -22,7 +22,7 @@ class CustomBoardButton extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             elevation: 0,
             backgroundColor: Colors.white,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(26),
             ),
@@ -31,7 +31,7 @@ class CustomBoardButton extends StatelessWidget {
             onClicked(index);
           },
           child: gameBoard[index].isEmpty
-              ? SizedBox(
+              ? const SizedBox(
                   height: double.infinity,
                 )
               : Image.asset(

@@ -37,9 +37,9 @@ class _GameScreenState extends State<GameScreen> {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
-          image: const AssetImage('assets/images/bg.png'),
+          image: AssetImage('assets/images/bg.png'),
           fit: BoxFit.cover,
         ),
       ),
@@ -53,40 +53,40 @@ class _GameScreenState extends State<GameScreen> {
                 children: [
                   Container(
                     alignment: Alignment.center,
-                    padding: EdgeInsets.all(16),
+                    padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(42),
                     ),
                     child: Text(
                       'First Player(${playersModel.firstPlayerSign})  |  Second Player(${playersModel.secondPlayerSign}) \n      score: $playerOneScore       |       score: $playerTwoScore',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Text(
                     textAlign: TextAlign.center,
                     title,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 32,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 24,
                   ),
                   Expanded(
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(32),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: AssetImage('assets/images/boardBg.png'),
                           fit: BoxFit.cover,
                         ),
@@ -180,7 +180,7 @@ class _GameScreenState extends State<GameScreen> {
         playerOneScore++;
         title = 'First Player Win  \n next round will start now ';
         setState(() {});
-        await Future.delayed(Duration(seconds: 5));
+        await Future.delayed(const Duration(seconds: 5));
         clearBoard();
       }
     } else {
@@ -191,7 +191,7 @@ class _GameScreenState extends State<GameScreen> {
         playerTwoScore++;
         title = 'Second Player Win  \n next round will start now ';
         setState(() {});
-        await Future.delayed(Duration(seconds: 5));
+        await Future.delayed(const Duration(seconds: 5));
         clearBoard();
       }
     }
@@ -199,7 +199,7 @@ class _GameScreenState extends State<GameScreen> {
     if (turn == 9) {
       title = 'Draw \n next round will start now ';
       setState(() {});
-      await Future.delayed(Duration(seconds: 5));
+      await Future.delayed(const Duration(seconds: 5));
       clearBoard();
     }
 
@@ -210,10 +210,12 @@ class _GameScreenState extends State<GameScreen> {
     //* check diagonals
     if (index.isEven) //then its on the diagonal and must check diagonals
     {
-      if (gameBoard[0] == sign && gameBoard[4] == sign && gameBoard[8] == sign)
+      if (gameBoard[0] == sign && gameBoard[4] == sign && gameBoard[8] == sign) {
         return true;
-      if (gameBoard[2] == sign && gameBoard[4] == sign && gameBoard[6] == sign)
+      }
+      if (gameBoard[2] == sign && gameBoard[4] == sign && gameBoard[6] == sign) {
         return true;
+      }
     }
 
     //* check columns
@@ -222,23 +224,28 @@ class _GameScreenState extends State<GameScreen> {
     //Now we idintify its column and can check it
     if (gameBoard[index] == sign &&
         gameBoard[tepmCol1] == sign &&
-        gameBoard[tepmCol2] == sign) return true;
+        gameBoard[tepmCol2] == sign) {
+      return true;
+    }
 
     //* check rows
     if (max(tepmCol2, max(tepmCol1, index)) ==
         index) // then its the last row and we will check it
     {
-      if (gameBoard[6] == sign && gameBoard[7] == sign && gameBoard[8] == sign)
+      if (gameBoard[6] == sign && gameBoard[7] == sign && gameBoard[8] == sign) {
         return true;
+      }
     } else if (min(tepmCol2, min(tepmCol1, index)) == index)
     //then its the first row and we will check it
     {
-      if (gameBoard[0] == sign && gameBoard[1] == sign && gameBoard[2] == sign)
+      if (gameBoard[0] == sign && gameBoard[1] == sign && gameBoard[2] == sign) {
         return true;
+      }
     } else //then its the middle row and we will check it
     {
-      if (gameBoard[3] == sign && gameBoard[4] == sign && gameBoard[5] == sign)
+      if (gameBoard[3] == sign && gameBoard[4] == sign && gameBoard[5] == sign) {
         return true;
+      }
     }
 
     return false;

@@ -14,7 +14,7 @@ class TixTacToe extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: IntroScreen.routeName,
-      routes: routes ,
+      routes: routes,
     );
   }
 }
