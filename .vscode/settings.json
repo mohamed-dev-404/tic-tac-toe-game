@@ -1,0 +1,14 @@
+{
+    "a-file-icon-vscode.folderTheme": "specific",
+    "a-file-icon-vscode.folderColor": "#90a4ae",
+    "a-file-icon-vscode.activeIconPacks": [
+        "rails",
+        "angular",
+        "react",
+        "phalcon"
+    ],
+    "cmake.sourceDirectory": "D:/Flutter_Projects/tix_tac_toe/linux",
+    "a-file-icon-vscode.arrowTheme": "material",
+    "a-file-icon-vscode.opacity": 1,
+    "a-file-icon-vscode.saturation": 1
+}
